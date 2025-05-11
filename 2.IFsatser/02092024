@@ -1,0 +1,128 @@
+
+#Operatorer
+
+# print(2>1) # 2 Är större än 1
+# print(1<2) # 1 Är mindre än 2?
+# print(1 >= 1)
+# print (1 <=4) # 1 Är mindre än eller = 4
+# print(1==1) # Är lika med
+
+# print (1 == "1") # False pga att det är olika datatyper, men hade vart sant i javascript
+
+# print ("1" == "1") # Sant för att det är samma tecken
+
+# print(1 != 2) # Är inte lika med
+
+#--------------
+
+# If satser
+
+# if 1 < 2:
+#     print("yes")
+# else:
+#     print ("no")
+
+# elif
+
+# if 1 == 2:
+#     print ("first")
+# elif 3==3:
+#     print ('middle')
+# elif 4==4:
+#     print('jaa') #Kör bara den första
+# else:
+#     print('last')
+
+
+# if 2==3:
+#     print("a")
+# elif 2==4:
+#     print("b")
+# elif 3==3:
+#     print("c")
+# else:
+#     print("allt annat")
+
+# Logiska uttryck
+
+# (1 < 2 ) and (2 > 3 ) # Bägge
+# (1 > 2) or (2 < 3) or (10 > 9) # Om en av dom är sanna, andra språk ||
+
+#--------------------------------------------
+
+# print(not(1==1))
+
+# Multiple conditions
+
+# age = 36
+# name = input("Vad heter du?")
+
+# if age > 35 and name.upper or name.lower == "Aladin":
+#     print("Hej Aladin")
+# elif age > 35:
+#     print("Du börjar bli gammal")
+# else: 
+#     print("Du är ung")
+# print("done")
+
+
+# day = input("Skriv in en veckoda")
+
+# if day == "lördag" or day == "söndag":
+#     print("Det är helg")
+# elif day == "måndag" or day == "tisdag":
+#     print("Det är en vardag.")
+# else:
+#     print("Du har inte skrivit in en veckodag")
+
+# Utamning
+
+# years_of_experince = 5
+# has_security_clearnece = True
+# is_team_lead = True
+# is_external_consult = False
+
+# if years_of_experince > 10 or is_external_consult:
+#     print("Access to the executive meeting.")
+# elif years_of_experince > 10 and has_security_clearence or is_team_lead: # F + T + T är första villkoret. Det andra F or T Som då ger access. Det i parantesernera räknas ut separat moch jämförs med det fösta stycket
+#     print("Access to the managment meeting.")
+# else: 
+#     print("No access to the meeting.")
+
+# age = 35
+
+# if age > 36:
+#     print("hej")
+# elif age > 7:
+#     print("hejdå")
+# else:
+#     print("halloj")
+
+# Uppgift1 
+
+number = int(input("Mata in ett tal"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

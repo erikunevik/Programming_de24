@@ -1,0 +1,4 @@
+$(document).ready(function () {
+    var page = $('body').attr('data-page');
+    apidocs.loadMenu('../metfcst/menu.html', page);
+});

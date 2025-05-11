@@ -1,0 +1,118 @@
+.code-schema::before,
+.code-syntax::before,
+.code-request::before,
+.code-request-atom::before,
+.code-request-xml::before,
+.code-request-json::before,
+.code-response::before,
+.code-javascript::before,
+.code-java::before,
+.code-json::before,
+.code-html::before,
+.code-response-atom::before,
+.code-response-xml::before,
+.code-response-json::before {
+  font-size: 12px;
+  font-weight: 700;
+  color: #959595;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.code-schema::before { content: "Schema"; }
+.code-syntax::before { content: "Syntax"; }
+.code-request::before { content: "Request"; }
+.code-request-atom::before { content: "Request (ATOM)"; }
+.code-request-xml::before { content: "Request (XML)"; }
+.code-request-json::before { content: "Request (JSON)"; }
+.code-response::before { content: "Response"; }
+.code-response-atom::before { content: "Response (ATOM)"; }
+.code-response-xml::before { content: "Response (XML)"; }
+.code-response-json::before { content: "Response (JSON)"; }
+.code-javascript::before {content: "Javascript"}
+.code-java::before {content: "Java"}
+.code-json::before {content: "JSON"}
+.code-html::before {content: "HTML"}
+
+ul.indent10 {
+    margin: 10px 0px 10px 14px;
+}
+ol.page-active li.active {
+    border-right: 4px solid #428BCA;
+}
+ol.page-active > li:hover {
+    border-right: 4px solid #428BCA;
+}
+.load {
+	position: relative;
+}
+a.inline-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border-top: 0;
+	border-radius: 0px 0px 0px 4px;
+	border-right: 0;
+}
+a.inline-button2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 0;
+    border-radius: 0px 0px 4px 4px;
+    border-right: 0;
+}
+#map {
+    margin-top: 20px;
+}
+.lightning:first-child {
+    margin-top: 2em;
+}
+.lightning {
+    margin-top : 1em;
+    border-bottom: 1px solid #DDD;
+}
+.tooltip {
+    position: fixed;
+}
+
+table.full {
+    width: 100%;
+}
+
+table.legend tr th {
+    text-align: left;
+    white-space: nowrap;
+}
+table.legend tr td {
+    text-align: right;
+}
+table.legend tr td,                                                                                                                                                                                                
+table.legend tr th {
+    border-right: 1px solid #333;
+    border-top: 1px solid #333;
+    padding: 4px;
+}
+table.legend tr:first-child td,
+table.legend tr:first-child th {
+    border-top: 0;
+}
+
+table.conversion {
+    width: 40%;
+}
+
+table.conversion th {
+    border-bottom: 1px solid #333;
+}
+
+#rss_img {
+	width:          16px;
+	height:         16px;
+	margin-right:   2px; 
+	vertical-align: middle;
+}
+
+#rss_span {
+	vertical-align: middle;
+}

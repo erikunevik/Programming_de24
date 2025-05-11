@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://opendata.smhi.se/apidocs/metfcst/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMHI Open Data API Docs - Meteorological Forecasts</title>
+
+    <link rel="shortcut icon" href="https://opendata.smhi.se/apidocs/favicon.ico">
+    <!-- Bootstrap -->
+    <link href="./SMHI Open Data API Docs - Meteorological Forecasts_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./SMHI Open Data API Docs - Meteorological Forecasts_files/smhi-apidoc.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!-- Matomo --><script type="text/javascript" async="" src="./SMHI Open Data API Docs - Meteorological Forecasts_files/matomo.js.nedladdning"></script><script type="text/javascript">  var _paq = window._paq = window._paq || [];  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */  _paq.push(['trackPageView']);  _paq.push(['enableLinkTracking']);  (function() {    var u="https://analytics.smhi.se/";    _paq.push(['setTrackerUrl', u+'matomo.php']);    _paq.push(['setSiteId', '2']);    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);  })();</script><!-- End Matomo Code --></head>
+<body data-page="intro">
+<div class="container">
+  
+  <div class="page-header">
+    <h1>SMHI Open Data API Docs - Meteorological Forecasts</h1>
+    <p class="lead">Web API for consuming data about Meteorological Forecasts.</p>
+  </div>
+
+  <div class="row">
+
+    <div class="col-sm-2">
+      <p id="menu">
+    <h3>Overview</h3>
+    <ol class="list-unstyled page-active">
+      <li id="page-intro" class="active"><a href="https://opendata.smhi.se/apidocs/metfcst/index.html">Introduction</a><span><ul class="list-unstyled indent10"><li><a href="https://opendata.smhi.se/apidocs/metfcst/index.html#about">About</a></li><li><a href="https://opendata.smhi.se/apidocs/metfcst/index.html#license">Licence</a></li><li><a href="https://opendata.smhi.se/apidocs/metfcst/index.html#contact">Contact</a></li></ul></span></li>
+      <li id="page-approved-time"><a href="https://opendata.smhi.se/apidocs/metfcst/approved_time.html">Approved Time</a><span></span></li>
+      <li id="page-valid-time"><a href="https://opendata.smhi.se/apidocs/metfcst/valid_time.html">Valid Time</a><span></span></li>
+      <li id="page-get-forecast"><a href="https://opendata.smhi.se/apidocs/metfcst/get-forecast.html">Get Forecast</a><span></span></li>
+      <li id="page-geographic-area"><a href="https://opendata.smhi.se/apidocs/metfcst/geographic_area.html">Geographic Area</a><span></span></li>
+      <li id="page-parameters"><a href="https://opendata.smhi.se/apidocs/metfcst/parameters.html">Parameters</a><span></span></li>
+      <li id="page-reference-system"><a href="https://opendata.smhi.se/apidocs/metfcst/reference_system.html">Reference System</a><span></span></li>
+      <li id="page-examples"><a href="https://opendata.smhi.se/apidocs/metfcst/examples.html">Examples</a><span></span></li>
+      <li id="page-demo-point"><a href="https://opendata.smhi.se/apidocs/metfcst/demo_point.html">Demo, Get Point</a><span></span></li>
+      <li id="page-demo-multipoint"><a href="https://opendata.smhi.se/apidocs/metfcst/demo_multipoint.html">Demo, Get MultiPoint</a><span></span></li>
+    </ol>
+    <h3>Links</h3>
+    <ol class="list-unstyled page-active">
+      <li id="page-real"><a href="https://opendata-download-metfcst.smhi.se/api">Service</a></li>
+      <li id="page-real">
+        <div>
+          <img id="rss_img" src="./SMHI Open Data API Docs - Meteorological Forecasts_files/feed.png">
+          <span id="rss_span"><a href="https://www.smhi.se/cm/data-fran-smhi-planerat-underhall-och-uppdateringar-1.78732?polopolylocale=sv_SE" title="Here you can find information about upcomming changes and maintenances in our services.">Maintenance news</a>
+          </span>
+        </div>
+      </li>
+    </ol>
+  </p>
+    </div>
+
+    <div id="content" class="col-sm-10">
+      <h2 id="about">About</h2>
+      <p><i>SMHI Open Data Meteorological Forecasts</i>, PMP, contains forecast data for the following 10 days. It is based on a number of forecast models
+         statistical adjustments and manual edits.</p>
+      <p>Applications that want to benefit from <i>SMHI Open Data Meteorological Forecasts</i> can use this service to retrieve data.
+         The Entry point is located at <a href="https://opendata-download-metfcst.smhi.se/">https://opendata-download-metfcst.smhi.se</a>.
+         The data is returned as mediatype <i>application/json</i> (<code>JSON</code>). All times are in <i>UTC</i> (Coordinated Universal Time).
+      </p>                     
+      <p>To get a forecast, eg. <a href="https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/16.158/lat/58.5812/data.json">https://opendata-download-metfcst.smhi.se/api/category/pmp3g/version/2/geotype/point/lon/16.158/lat/58.5812/data.json</a>,
+         can be used to get a <i>meteorological forecast</i> at a point near SMHI, Norrköping.
+         To get started with the API, see <a href="https://opendata.smhi.se/apidocs/metfcst/examples.html">Examples</a> and <a href="https://opendata.smhi.se/apidocs/metfcst/demo_point.html">Point Demo</a>.
+      </p>
+      <p>See <a href="https://opendata.smhi.se/apidocs/metfcst/reference_system.html">Reference System</a> for more information about the spatial reference system and latitude and longitude coordinates.</p>
+
+      <h2 id="license">Licence</h2>
+      <p><i>SMHI Open Data API</i> is published under theese <a href="https://www.smhi.se/data/oppna-data/Information-om-oppna-data/villkor-for-anvandning">Terms and conditions</a>.
+
+      </p><h2 id="contact">Contact</h2>
+      <p>Questions or inquiries can be sent to: <a href="mailto:opendata-support@smhi.se">opendata-support@smhi.se</a>.
+
+      </p></div>
+  </div>
+</div>
+
+<script src="./SMHI Open Data API Docs - Meteorological Forecasts_files/jquery-1.11.1.min.js.nedladdning"></script>
+<script src="./SMHI Open Data API Docs - Meteorological Forecasts_files/bootstrap.min.js.nedladdning"></script>
+<script src="./SMHI Open Data API Docs - Meteorological Forecasts_files/smhi-apidocs.js.nedladdning"></script>
+<script src="./SMHI Open Data API Docs - Meteorological Forecasts_files/smhi-apidocs-metfcst.js.nedladdning"></script>
+
+
+</body></html>

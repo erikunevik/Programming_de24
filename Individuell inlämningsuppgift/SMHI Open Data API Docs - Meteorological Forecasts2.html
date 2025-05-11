@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://opendata.smhi.se/apidocs/metfcst/examples.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SMHI Open Data API Docs - Meteorological Forecasts</title>
+
+<link rel="shortcut icon" href="https://opendata.smhi.se/apidocs/favicon.ico">
+<!-- Bootstrap -->
+<link href="./SMHI Open Data API Docs - Meteorological Forecasts2_files/bootstrap.min.css" rel="stylesheet">
+<link href="./SMHI Open Data API Docs - Meteorological Forecasts2_files/smhi-apidoc.css" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<!-- Matomo --><script type="text/javascript" async="" src="./SMHI Open Data API Docs - Meteorological Forecasts2_files/matomo.js.nedladdning"></script><script type="text/javascript">  var _paq = window._paq = window._paq || [];  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */  _paq.push(['trackPageView']);  _paq.push(['enableLinkTracking']);  (function() {    var u="https://analytics.smhi.se/";    _paq.push(['setTrackerUrl', u+'matomo.php']);    _paq.push(['setSiteId', '2']);    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);  })();</script><!-- End Matomo Code --></head>
+<body data-page="examples">
+  <div class="container">
+
+    <div class="page-header">
+      <h1>SMHI Open Data API Docs - Meteorological Forecasts</h1>
+      <p class="lead">Web API for consuming data about Meteorological Forecasts.</p>    
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-2">
+        <p id="menu">
+    <h3>Overview</h3>
+    <ol class="list-unstyled page-active">
+      <li id="page-intro"><a href="https://opendata.smhi.se/apidocs/metfcst/index.html">Introduction</a><span></span></li>
+      <li id="page-approved-time"><a href="https://opendata.smhi.se/apidocs/metfcst/approved_time.html">Approved Time</a><span></span></li>
+      <li id="page-valid-time"><a href="https://opendata.smhi.se/apidocs/metfcst/valid_time.html">Valid Time</a><span></span></li>
+      <li id="page-get-forecast"><a href="https://opendata.smhi.se/apidocs/metfcst/get-forecast.html">Get Forecast</a><span></span></li>
+      <li id="page-geographic-area"><a href="https://opendata.smhi.se/apidocs/metfcst/geographic_area.html">Geographic Area</a><span></span></li>
+      <li id="page-parameters"><a href="https://opendata.smhi.se/apidocs/metfcst/parameters.html">Parameters</a><span></span></li>
+      <li id="page-reference-system"><a href="https://opendata.smhi.se/apidocs/metfcst/reference_system.html">Reference System</a><span></span></li>
+      <li id="page-examples" class="active"><a href="https://opendata.smhi.se/apidocs/metfcst/examples.html">Examples</a><span><ul class="list-unstyled indent10"><li><a href="https://opendata.smhi.se/apidocs/metfcst/examples.html#examples">Examples</a></li></ul></span></li>
+      <li id="page-demo-point"><a href="https://opendata.smhi.se/apidocs/metfcst/demo_point.html">Demo, Get Point</a><span></span></li>
+      <li id="page-demo-multipoint"><a href="https://opendata.smhi.se/apidocs/metfcst/demo_multipoint.html">Demo, Get MultiPoint</a><span></span></li>
+    </ol>
+    <h3>Links</h3>
+    <ol class="list-unstyled page-active">
+      <li id="page-real"><a href="https://opendata-download-metfcst.smhi.se/api">Service</a></li>
+      <li id="page-real">
+        <div>
+          <img id="rss_img" src="./SMHI Open Data API Docs - Meteorological Forecasts2_files/feed.png">
+          <span id="rss_span"><a href="https://www.smhi.se/cm/data-fran-smhi-planerat-underhall-och-uppdateringar-1.78732?polopolylocale=sv_SE" title="Here you can find information about upcomming changes and maintenances in our services.">Maintenance news</a>
+          </span>
+        </div>
+      </li>
+    </ol>
+  </p>
+      </div>
+
+      <div id="content" class="col-sm-10">
+
+        <h2 id="examples">Examples</h2>
+        <p>The GET Point forecast examples only contains two time steps. A correct answer contains approximately 70 time steps.</p>
+        <p>The GET MultiPoint forecast and GET MultiPoint examples contains a limited list of values. A correct answer contains 461589 values for
+          category pmp3g.</p>
+        <div class="bs-example bs-example-tabs">
+          <ul id="example-tabs" class="nav nav-tabs" role="tablist">
+            <li><a href="https://opendata.smhi.se/apidocs/metfcst/examples.html#approved-time-example" role="tab" data-toggle="tab">Approved time</a></li>
+            <li><a href="https://opendata.smhi.se/apidocs/metfcst/examples.html#valid-time-example" role="tab" data-toggle="tab">Valid time</a></li>
+            <li><a href="https://opendata.smhi.se/apidocs/metfcst/examples.html#polygon-example" role="tab" data-toggle="tab">Get polygon</a></li>
+            <li><a href="https://opendata.smhi.se/apidocs/metfcst/examples.html#multipoint-example" role="tab" data-toggle="tab">Get MultiPoint</a></li>
+            <li><a href="https://opendata.smhi.se/apidocs/metfcst/examples.html#parameters-example" role="tab" data-toggle="tab">Get Parameters</a></li>
+            <li class="active"><a href="https://opendata.smhi.se/apidocs/metfcst/examples.html#get-point-forecast-example-v2" role="tab" data-toggle="tab">Get Point forecast</a></li>
+            <li><a href="https://opendata.smhi.se/apidocs/metfcst/examples.html#get-multipoint-forecast-example-v2" role="tab" data-toggle="tab">Get MultiPoint forecast</a></li>
+          </ul>
+          <div id="example-content" class="tab-content">
+            <div class="tab-pane fade" id="approved-time-example">
+              <p>
+              </p><div class="code-request">
+                <pre>GET /api/category/pmp3g/version/2/approvedtime.json</pre>
+              </div>
+              <div class="code-response">
+                <pre class="load" data-load="res/approved-time.json">{
+
+    "approvedTime": "2014-09-25T05:19:09Z",
+    "referenceTime": "2014-09-25T03:00:00Z"
+
+}<a href="https://opendata.smhi.se/apidocs/metfcst/res/approved-time.json" class="inline-button btn btn-default btn-sm">Source</a></pre>
+              </div>
+              <p></p>
+            </div>
+            <div class="tab-pane fade" id="valid-time-example">
+              <p>
+              </p><div class="code-request">
+                <pre>GET /api/category/pmp3g/version/2/validtime.json</pre>
+              </div>
+              <div class="code-response">
+                <pre class="load" data-load="res/validtime.json">{
+  "validTime":[
+    "2015-10-12T07:00:00Z",
+    "2015-10-12T08:00:00Z",
+    "2015-10-12T09:00:00Z",
+    "2015-10-12T10:00:00Z",
+    "2015-10-12T11:00:00Z",
+    "2015-10-12T12:00:00Z",
+    "2015-10-12T13:00:00Z",
+    "2015-10-12T14:00:00Z",
+    "2015-10-12T15:00:00Z",
+    "2015-10-12T16:00:00Z",
+    "2015-10-12T17:00:00Z",
+    "2015-10-12T18:00:00Z",
+    "2015-10-12T19:00:00Z",
+    "2015-10-12T20:00:00Z",
+    "2015-10-12T21:00:00Z",
+    "2015-10-12T22:00:00Z",
+    "2015-10-12T23:00:00Z",
+    "2015-10-13T00:00:00Z",
+    "2015-10-13T01:00:00Z",
+    "2015-10-13T02:00:00Z",
+    "2015-10-13T03:00:00Z",
+    "2015-10-13T04:00:00Z",
+    "2015-10-13T05:00:00Z",
+    "2015-10-13T06:00:00Z",
+    "2015-10-13T07:00:00Z",
+    "2015-10-13T08:00:00Z",
+    "2015-10-13T09:00:00Z",
+    "2015-10-13T10:00:00Z",
+    "2015-10-13T11:00:00Z",
+    "2015-10-13T12:00:00Z",
+    "2015-10-13T13:00:00Z",
+    "2015-10-13T14:00:00Z",
+    "2015-10-13T15:00:00Z",
+    "2015-10-13T16:00:00Z",
+    "2015-10-13T17:00:00Z",
+    "2015-10-13T18:00:00Z",
+    "2015-10-13T19:00:00Z",
+    "2015-10-13T20:00:00Z",
+    "2015-10-13T21:00:00Z",
+    "2015-10-13T22:00:00Z",
+    "2015-10-13T23:00:00Z",
+    "2015-10-14T00:00:00Z",
+    "2015-10-14T01:00:00Z",
+    "2015-10-14T02:00:00Z",
+    "2015-10-14T03:00:00Z",
+    "2015-10-14T04:00:00Z",
+    "2015-10-14T05:00:00Z",
+    "2015-10-14T06:00:00Z",
+    "2015-10-14T07:00:00Z",
+    "2015-10-14T08:00:00Z",
+    "2015-10-14T09:00:00Z",
+    "2015-10-14T10:00:00Z",
+    "2015-10-14T11:00:00Z",
+    "2015-10-14T12:00:00Z",
+    "2015-10-14T15:00:00Z",
+    "2015-10-14T18:00:00Z",
+    "2015-10-14T21:00:00Z",
+    "2015-10-15T00:00:00Z",
+    "2015-10-15T06:00:00Z",
+    "2015-10-15T12:00:00Z",
+    "2015-10-15T18:00:00Z",
+    "2015-10-16T00:00:00Z",
+    "2015-10-16T06:00:00Z",
+    "2015-10-16T12:00:00Z",
+    "2015-10-16T18:00:00Z",
+    "2015-10-17T00:00:00Z",
+    "2015-10-17T06:00:00Z",
+    "2015-10-17T12:00:00Z",
+    "2015-10-17T18:00:00Z",
+    "2015-10-18T00:00:00Z",
+    "2015-10-18T06:00:00Z",
+    "2015-10-18T12:00:00Z",
+    "2015-10-19T00:00:00Z",
+    "2015-10-19T12:00:00Z",
+    "2015-10-20T00:00:00Z",
+    "2015-10-20T12:00:00Z",
+    "2015-10-21T00:00:00Z",
+    "2015-10-21T12:00:00Z",
+    "2015-10-22T00:00:00Z"
+  ]
+}<a href="https://opendata.smhi.se/apidocs/metfcst/res/validtime.json" class="inline-button btn btn-default btn-sm">Source</a></pre>
+              </div>
+              <p></p>
+            </div>
+            <div class="tab-pane fade" id="polygon-example">
+              <p>
+              </p><div class="code-request">
+                <pre>GET /api/category/pmp3g/version/2/geotype/polygon.json</pre>
+              </div>
+              <div class="code-response">
+                <pre class="load" data-load="res/polygon.json">{
+  "type":"Polygon",
+  "coordinates":[
+    [
+      2.250475,
+      52.50044
+    ],
+    [
+      27.392184,
+      52.542473
+    ],
+    [
+      37.934697,
+      70.742227
+    ],
+    [
+      -8.553029,
+      70.666011
+    ],
+    [
+      2.250475,
+      52.50044
+    ]
+  ]
+}<a href="https://opendata.smhi.se/apidocs/metfcst/res/polygon.json" class="inline-button btn btn-default btn-sm">Source</a></pre>
+              </div>
+              <p></p>
+            </div>
+            <div class="tab-pane fade" id="multipoint-example">
+              <p>
+              </p><div class="code-request">
+                <pre>GET /api/category/pmp3g/version/2/geotype/multipoint.json<br>Accept-Encoding: gzip</pre>
+              </div>
+              <div class="code-response">
+                <pre class="load" data-load="res/multipoint.json">{
+   "type":"MultiPoint",
+   "coordinates":[
+      [
+         2.250475,
+         52.500440
+      ],
+      [
+         2.290570,
+         52.505220
+      ],
+      [
+         2.330675,
+         52.509984
+      ],
+      [
+         2.370789,
+         52.514733
+      ],
+      [
+         2.410912,
+         52.519468
+      ],
+      [
+         2.451044,
+         52.524188
+      ],
+      [
+         2.491185,
+         52.528893
+      ],
+      [
+         2.531334,
+         52.533583
+      ],
+      [
+         2.571493,
+         52.538258
+      ],
+      [
+         2.611661,
+         52.542919
+      ],
+      [
+         2.651838,
+         52.547564
+      ],
+      [
+         2.692023,
+         52.552195
+      ],
+      [
+         2.732218,
+         52.556811
+      ],
+      [
+         2.772421,
+         52.561412
+      ],
+      [
+         2.812633,
+         52.565998
+      ],
+      [
+         2.852854,
+         52.570570
+      ],
+      [
+         2.893083,
+         52.575126
+      ],
+      [
+         2.933322,
+         52.579667
+      ],
+      [
+         2.973569,
+         52.584194
+      ],
+      [
+         3.013825,
+         52.588706
+      ],
+      [
+         3.054089,
+         52.593203
+      ],
+      [
+         3.094362,
+         52.597684
+      ],
+      [
+         3.134644,
+         52.602151
+      ],
+      [
+         3.174934,
+         52.606603
+      ],
+      [
+         3.215233,
+         52.611040
+      ],
+      [
+         3.255540,
+         52.615463
+      ],
+      [
+         3.295856,
+         52.619870
+      ],
+      [
+         3.336180,
+         52.624262
+      ],
+      [
+         3.376513,
+         52.628639
+      ],
+      [
+         3.416854,
+         52.633002
+      ],
+      [
+         3.457203,
+         52.637349
+      ],
+      [
+         3.497561,
+         52.641682
+      ],
+      [
+         3.537928,
+         52.645999
+      ],
+      [
+         3.578302,
+         52.650302
+      ],
+      [
+         3.618685,
+         52.654589
+      ],
+      [
+         3.659076,
+         52.658862
+      ],
+      [
+         3.699476,
+         52.663119
+      ],
+      [
+         3.739883,
+         52.667362
+      ],
+      [
+         3.780299,
+         52.671589
+      ],
+      [
+         3.820723,
+         52.675802
+      ],
+      [
+         3.861155,
+         52.679999
+      ],
+      [
+         3.901595,
+         52.684182
+      ],
+      [
+         3.942044,
+         52.688349
+      ],
+      [
+         3.982500,
+         52.692502
+      ],
+      [
+         4.022965,
+         52.696639
+      ],
+      [
+         4.063437,
+         52.700762
+      ],
+      [
+         4.103917,
+         52.704869
+      ],
+      [
+         4.144406,
+         52.708961
+      ],
+      [
+         4.184902,
+         52.713038
+      ],
+      [
+         4.225406,
+         52.717101
+      ],
+      [
+         4.265918,
+         52.721148
+      ],
+      [
+         4.306438,
+         52.725180
+      ],
+      [
+         4.346966,
+         52.729197
+      ],
+      [
+         4.387501,
+         52.733199
+      ],
+      [
+         4.428045,
+         52.737185
+      ],
+      [
+         4.468596,
+         52.741157
+      ],
+      [
+         4.509155,
+         52.745114
+      ],
+      [
+         4.549721,
+         52.749055
+      ],
+      [
+         4.590295,
+         52.752982
+      ],
+      [
+         4.630877,
+         52.756893
+      ],
+      [
+         4.671466,
+         52.760789
+      ],
+      [
+         4.712063,
+         52.764670
+      ],
+      [
+         4.752667,
+         52.768536
+      ],
+      [
+         4.793279,
+         52.772387
+      ],
+      [
+         4.833899,
+         52.776223
+      ],
+      [
+         4.874526,
+         52.780043
+      ],
+      [
+         4.915160,
+         52.783849
+      ],
+      [
+         4.955802,
+         52.787639
+      ],
+      [
+         4.996451,
+         52.791414
+      ],
+      [
+         5.037108,
+         52.795174
+      ]
+   ]
+}<a href="https://opendata.smhi.se/apidocs/metfcst/res/multipoint.json" class="inline-button btn btn-default btn-sm">Source</a></pre>
+              </div>
+              <p></p>
+            </div>
+            <div class="tab-pane fade" id="parameters-example">
+              <p>
+              </p><div class="code-request">
+                <pre>GET /api/category/pmp3g/version/2/parameter.json</pre>
+              </div>
+              <div class="code-response">
+                <pre class="load" data-load="res/parameters.json">{
+  "parameters":[
+    {
+      "name":"msl",
+      "levelType":"hmsl",
+      "level":0
+    },
+    {
+      "name":"t",
+      "levelType":"hl",
+      "level":2
+    },
+    {
+      "name":"vis",
+      "levelType":"hl",
+      "level":2
+    },
+    {
+      "name":"wd",
+      "levelType":"hl",
+      "level":10
+    },
+    {
+      "name":"ws",
+      "levelType":"hl",
+      "level":10
+    },
+    {
+      "name":"r",
+      "levelType":"hl",
+      "level":2
+    },
+    {
+      "name":"tstm",
+      "levelType":"hl",
+      "level":0
+    },
+    {
+      "name":"tcc_mean",
+      "levelType":"hl",
+      "level":0
+    },
+    {
+      "name":"lcc_mean",
+      "levelType":"hl",
+      "level":0
+    },
+    {
+      "name":"mcc_mean",
+      "levelType":"hl",
+      "level":0
+    },
+    {
+      "name":"hcc_mean",
+      "levelType":"hl",
+      "level":0
+    },
+    {
+      "name":"gust",
+      "levelType":"hl",
+      "level":10
+    },
+    {
+      "name":"pmin",
+      "levelType":"hl",
+      "level":0
+    },
+    {
+      "name":"pmax",
+      "levelType":"hl",
+      "level":0
+    },
+    {
+      "name":"spp",
+      "levelType":"hl",
+      "level":0
+    },
+    {
+      "name":"pcat",
+      "levelType":"hl",
+      "level":0
+    },
+    {
+      "name":"pmean",
+      "levelType":"hl",
+      "level":0
+    },
+    {
+      "name":"pmedian",
+      "levelType":"hl",
+      "level":0
+    }
+  ]
+}<a href="https://opendata.smhi.se/apidocs/metfcst/res/parameters.json" class="inline-button btn btn-default btn-sm">Source</a></pre>
+              </div>
+              <p></p>
+            </div>
+            <div class="tab-pane fade in active" id="get-point-forecast-example-v2">
+              <p>
+              </p><div class="code-request">
+                <pre>GET /api/category/pmp3g/version/2/geotype/point/lon/16/lat/58/data.json</pre>
+              </div>
+              <div class="code-response">
+                <pre class="load" data-load="res/data_pmp2g_point_v2.json">{
+  "approvedTime":"2015-10-12T05:13:19Z",
+  "referenceTime":"2015-10-12T03:00:00Z",
+  "geometry":{
+    "type":"Point",
+    "coordinates":[
+      [
+        16.017767,
+        57.999628
+      ]
+    ]
+  },
+  "timeSeries":[
+    {
+      "validTime":"2015-10-12T04:00:00Z",
+      "parameters":[
+        {
+          "name":"msl",
+          "levelType":"hmsl",
+          "level":0,
+          "values":[
+            1031
+          ]
+        },
+        {
+          "name":"t",
+          "levelType":"hl",
+          "level":2,
+          "values":[
+            3.1
+          ]
+        },
+        {
+          "name":"vis",
+          "levelType":"hl",
+          "level":2,
+          "values":[
+            18
+          ]
+        },
+        {
+          "name":"wd",
+          "levelType":"hl",
+          "level":10,
+          "values":[
+            26
+          ]
+        },
+        {
+          "name":"ws",
+          "levelType":"hl",
+          "level":10,
+          "values":[
+            0.2
+          ]
+        },
+        {
+          "name":"r",
+          "levelType":"hl",
+          "level":2,
+          "values":[
+            95
+          ]
+        },
+        {
+          "name":"tstm",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"tcc_mean",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            6
+          ]
+        },
+        {
+          "name":"lcc_mean",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            6
+          ]
+        },
+        {
+          "name":"mcc_mean",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"hcc_mean",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"gust",
+          "levelType":"hl",
+          "level":10,
+          "values":[
+            1.1
+          ]
+        },
+        {
+          "name":"pmin",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"pmax",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"spp",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            -9
+          ]
+        },
+        {
+          "name":"pcat",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"pmean",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"pmedian",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "validTime":"2015-10-12T05:00:00Z",
+      "parameters":[
+        {
+          "name":"msl",
+          "levelType":"hmsl",
+          "level":0,
+          "values":[
+            1030
+          ]
+        },
+        {
+          "name":"t",
+          "levelType":"hl",
+          "level":2,
+          "values":[
+            3.4
+          ]
+        },
+        {
+          "name":"vis",
+          "levelType":"hl",
+          "level":2,
+          "values":[
+            16
+          ]
+        },
+        {
+          "name":"wd",
+          "levelType":"hl",
+          "level":10,
+          "values":[
+            99
+          ]
+        },
+        {
+          "name":"ws",
+          "levelType":"hl",
+          "level":10,
+          "values":[
+            0.7
+          ]
+        },
+        {
+          "name":"r",
+          "levelType":"hl",
+          "level":2,
+          "values":[
+            95
+          ]
+        },
+        {
+          "name":"tstm",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"tcc_mean",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            7
+          ]
+        },
+        {
+          "name":"lcc_mean",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            7
+          ]
+        },
+        {
+          "name":"mcc_mean",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"hcc_mean",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"gust",
+          "levelType":"hl",
+          "level":10,
+          "values":[
+            2
+          ]
+        },
+        {
+          "name":"pmin",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"pmax",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"spp",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            -9
+          ]
+        },
+        {
+          "name":"pcat",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"pmean",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        },
+        {
+          "name":"pmedian",
+          "levelType":"hl",
+          "level":0,
+          "values":[
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}<a href="https://opendata.smhi.se/apidocs/metfcst/res/data_pmp2g_point_v2.json" class="inline-button btn btn-default btn-sm">Source</a></pre>
+              </div>
+              <p></p>
+            </div>
+            <div class="tab-pane fade" id="get-multipoint-forecast-example-v2">
+              <p>
+              </p><div class="code-request">
+                <pre>GET /api/category/pmp3g/version/2/geotype/multipoint/validtime/20151012T150000Z/parameter/t/leveltype/hl/level/2/data.json?with-geo=false<br>Accept-Encoding: gzip</pre>
+              </div>
+              <div class="code-response">
+                <pre class="load" data-load="res/data_pmp2g_multipoint_v2.json">{
+  "approvedTime":"2015-10-12T12:51:34Z",
+  "referenceTime":"2015-10-12T10:00:00Z",
+  "timeSeries":[
+    {
+      "validTime":"2015-10-12T15:00:00Z",
+      "parameters":[
+        {
+          "name":"t",
+          "levelType":"hl",
+          "level":2,
+          "values":[
+            8.5,
+            8.4,
+            8.3,
+            8.2,
+            8.1,
+            8,
+            8,
+            7.9,
+            7.8,
+            7.8,
+            7.7,
+            7.6,
+            7.4,
+            9.7,
+            7.4,
+            7.2,
+            7.1,
+            7,
+            7,
+            6.9,
+            6.9,
+            6.9,
+            6.9,
+            6.9,
+            6.8,
+            6.8,
+            6.8,
+            6.7,
+            6.5,
+            6.5,
+            6.5,
+            6.4,
+            6.4,
+            6.4,
+            6.5,
+            6.6,
+            8.6,
+            8.5,
+            6.3,
+            6.4,
+            8.4,
+            8.4,
+            8.3,
+            6.4,
+            6.3,
+            8.1,
+            8.1,
+            6.3,
+            6.2,
+            6.1,
+            7.8,
+            7.7,
+            5.9,
+            7.7,
+            7.5,
+            5.3,
+            7.2,
+            6.9,
+            4.4,
+            6,
+            6.3,
+            6.7,
+            6.9,
+            6.9,
+            6.9,
+            6.9,
+            6.9,
+            7,
+            7.1,
+            7.3,
+            7.5,
+            6.6,
+            7.7,
+            6.7,
+            6.8,
+            7.8,
+            7.7,
+            7.6,
+            7.4,
+            7.1,
+            6.9,
+            6.7,
+            6.5,
+            6.5,
+            6.7,
+            6.9,
+            6.9,
+            6.9,
+            6.9,
+            6.8,
+            6.8,
+            6.8,
+            6.8,
+            6.9,
+            6.9,
+            6.9,
+            6.9,
+            6.9,
+            6.8,
+            6.8,
+            6.8,
+            6.8,
+            6.8,
+            6.8,
+            6.8,
+            6.7,
+            6.7,
+            6.7,
+            6.7,
+            6.7,
+            6.7,
+            6.7,
+            6.7,
+            6.8,
+            6.8
+          ]
+        }
+      ]
+    }
+  ]
+}<a href="https://opendata.smhi.se/apidocs/metfcst/res/data_pmp2g_multipoint_v2.json" class="inline-button btn btn-default btn-sm">Source</a></pre>
+              </div>
+              <p></p>
+            </div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./SMHI Open Data API Docs - Meteorological Forecasts2_files/jquery-1.11.1.min.js.nedladdning"></script>
+  <script src="./SMHI Open Data API Docs - Meteorological Forecasts2_files/bootstrap.min.js.nedladdning"></script>
+  <script src="./SMHI Open Data API Docs - Meteorological Forecasts2_files/smhi-apidocs.js.nedladdning"></script>
+  <script src="./SMHI Open Data API Docs - Meteorological Forecasts2_files/smhi-apidocs-metfcst.js.nedladdning"></script>
+
+
+</body></html>

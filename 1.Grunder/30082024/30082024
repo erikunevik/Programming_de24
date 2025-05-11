@@ -1,0 +1,140 @@
+# # Uppgift 1
+
+# print("Hello")
+
+# #---------------------------------------------------------------------
+# # Uppgift 2
+
+# print("2021")
+# print(2021)
+# print("2021-12-24")
+# print(2021-12-24)
+
+# #---------------------------------------------------------------------
+
+# # Uppgift 3
+
+# # name = input("Skriv in ditt förnamn: ")
+# # lastname= input("Skriv in ditt efternamn: ")
+
+# # print("Nament i omvändordning är: {b} {a}".format(a=name, b=lastname))
+
+
+# # # Challenge
+# # print(f"Namnet i omvändordning är: {lastname} {name}")
+
+# #---------------------------------------------------------------------
+
+# # Uppgift 4
+
+# # Chatbot
+# robot_name = "RobotX"
+# robot_hobby = "programming"
+# user_name = input("What is your name? ")
+# birth_year = int(input("What year were you born? "))
+# user_hobby = input("What is your hobby? ")
+
+# # Calculate age
+# current_year = 2024
+# age = current_year - birth_year
+
+# print(f"Hello, my name is {robot_name} and your name is {user_name}.")
+# print(f"Your hobby is {user_hobby} and my hobby is {robot_hobby}.")
+# print(f"Since you were born in {birth_year}, you are {age} years old.")
+
+# # Challenge 1
+# print(f"ROBOT'S NAME: {robot_name.upper()}, USER'S NAME: {user_name.upper()}")
+
+# # Challenge 2
+
+# if robot_hobby == user_hobby:
+#     print("We have the same hobby!")
+# else:
+#     print("We have different hobbies.")
+
+#---------------------------------------------------------------------
+
+# Uppgift 5
+
+# num1 = float(input("Enter the first number: "))
+# num2 = float(input("Enter the second number: "))
+# num3 = float(input("Enter the third number: "))
+
+# sum_numbers = num1 + num2 + num3
+# average = sum_numbers / 3
+
+# print(f"The sum of the numbers is: {sum_numbers}")
+# print(f"The average of the number is: {average}")
+
+# Challenge
+# decimal_number = float(input("Enter a decimal number: "))
+# rounded_number = round(decimal_number)
+# print(f"The nearest integer is: {rounded_number}")
+
+# print(round(0.5))  # -> 1 
+# print(round(2.5))  # -> 3 
+# print(round(5.5))  # -> 6 
+
+# Behöver absolut inte kunna just nu
+
+# def custom_round(n):
+#     if n % 1 >= 0.5:
+#         return int(n) + 1
+    
+#     else:
+#         return int(n)
+    
+# print(custom_round(0.5))
+# print(custom_round(2.5))
+# print(custom_round(5.5))
+
+
+#---------------------------------------------------------------------
+
+# # Uppgift 6
+
+# user_string = input("Enter a string: ")
+
+# # a
+# print(f"The lengths of the string is: {len(user_string)}")
+
+# # b
+# print(f"The first letter is: {user_string[0]}")
+# print(f"The last letter is: {user_string[-1]}")
+
+# # c
+# print(f"The string in reverse is: {user_string[::-1]}")
+
+# # d
+
+# print("\n".join(user_string))
+
+# # e
+# print(f"Every second character is: {user_string[::2]}")
+
+
+#---------------------------------------------------------------------
+
+# Uppgift 7
+
+# Skapa en variabel med värdet None
+var1 = None
+
+# Skapa en variabel med ett Booleskt värde
+var2 = True
+
+# Skriv ut värdena på båda variablerna
+print("Värdet av var1 är:", var1)
+print("Värdet av var2 är:", var2)
+
+# Addera var2 (Boolean) med 5
+resultat = var2 + 5
+print("Resultatet av var2 + 5 är:", resultat)
+
+# Konvertera det Booleska värdet till ett heltal
+konverterat_var2 = int(var2)
+print(konverterat_var2)
+
+# Jämför om var1 (None) är lika med 0
+jämförelse = var1 == 0
+print("Är var1 (None) lika med 0?", jämförelse)

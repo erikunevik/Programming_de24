@@ -1,0 +1,67 @@
+(function (apidocs, $, undefined) {
+  apidocs.loadMenu = function (url, page) {
+    $.ajax({
+      url: url, //'../metobs/menu.html',
+      type: "GET",
+      dataType: "html",
+      success: function (text) {
+        var dom = $("<div />").append(text);
+        $("#menu").html($("#menu", dom).html());
+        $("ol.page-active > li#page-" + page).addClass("active");
+        apidocs.updateMenu(page);
+      },
+    });
+  };
+
+  apidocs.updateMenu = function (page) {
+    var nav = '<ul class="list-unstyled indent10">';
+    $("div#content h2").each(function () {
+      var id = $(this).attr("id");
+      var name = $(this).html();
+      nav += '<li><a href="#' + id + '">' + name + "</a></li>";
+    });
+    nav += "</ul>";
+    $("ol.page-active > li#page-" + page + " > span").html(nav);
+  };
+
+  apidocs.loadSource = function (el, url) {
+    var me = $(el);
+    $.ajax({
+      url: url,
+      type: "GET",
+      dataType: "text",
+      success: function (text) {
+        $(me).html(text.replace(/</g, "&lt;").replace(/>/g, "&gt;"));
+        $(me).append(
+          '<a href="' +
+            url +
+            '" class="inline-button btn btn-default btn-sm">Source</a>'
+        );
+      },
+    });
+  };
+})((window.apidocs = window.apidocs || {}), jQuery);
+
+$(document).ready(function () {
+  $("head").append(
+    "<!-- Matomo -->" +
+      '<script type="text/javascript">' +
+      "  var _paq = window._paq = window._paq || [];" +
+      '  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */' +
+      "  _paq.push(['trackPageView']);" +
+      "  _paq.push(['enableLinkTracking']);" +
+      "  (function() {" +
+      '    var u="https://analytics.smhi.se/";' +
+      "    _paq.push(['setTrackerUrl', u+'matomo.php']);" +
+      "    _paq.push(['setSiteId', '2']);" +
+      "    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];" +
+      "    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);" +
+      "  })();" +
+      "</script>" +
+      "<!-- End Matomo Code -->"
+  );
+  $("pre.load").each(function (i, el) {
+    var url = $(el).attr("data-load");
+    apidocs.loadSource(el, url);
+  });
+});
